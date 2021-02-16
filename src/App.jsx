@@ -5,7 +5,7 @@ class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      Loaded: false
+      Load: false
     }
   }
 
@@ -16,16 +16,16 @@ class App extends React.Component {
       .then(json => {
         console.log(json.rates)
         this.setState({
-          Loaded: true,
+          Load: true,
           images: json.file
         })
       })
   }
 
   render () {
-    const { Loaded, images } = this.state
+    const { Load, images } = this.state
     console.log(this.state)
-    if (!Loaded) {
+    if (!Load) {
       return <h1 Style='text'> 読み込み中です！！ </h1>
     } else {
       return (
